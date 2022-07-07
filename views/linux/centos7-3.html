@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CentOS7 自动化运维基础 符号与正则表达式 | Rinneの大図書館</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/sysimg/logo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+    <script src="/pio/autoload.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/Snowstorm/20131208/snowstorm-min.js"></script>
+    <meta name="description" content="Rinne's Library">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.018708fb.css" as="style"><link rel="preload" href="/assets/js/app.e77fcc0e.js" as="script"><link rel="preload" href="/assets/js/3.d0fef3ef.js" as="script"><link rel="preload" href="/assets/js/1.1fdf4c94.js" as="script"><link rel="preload" href="/assets/js/59.22946218.js" as="script"><link rel="prefetch" href="/assets/js/10.83624d55.js"><link rel="prefetch" href="/assets/js/11.00a3499d.js"><link rel="prefetch" href="/assets/js/12.4d537ad2.js"><link rel="prefetch" href="/assets/js/13.ab75d70e.js"><link rel="prefetch" href="/assets/js/14.23529ff0.js"><link rel="prefetch" href="/assets/js/15.501afd2b.js"><link rel="prefetch" href="/assets/js/16.5d4f21fe.js"><link rel="prefetch" href="/assets/js/17.dc9dc4f6.js"><link rel="prefetch" href="/assets/js/18.893f5f2f.js"><link rel="prefetch" href="/assets/js/19.bf0daf79.js"><link rel="prefetch" href="/assets/js/20.c1737011.js"><link rel="prefetch" href="/assets/js/21.4688c76e.js"><link rel="prefetch" href="/assets/js/22.e37ab687.js"><link rel="prefetch" href="/assets/js/23.d328f326.js"><link rel="prefetch" href="/assets/js/24.c593da08.js"><link rel="prefetch" href="/assets/js/25.8f0b8e9d.js"><link rel="prefetch" href="/assets/js/26.b9efd2a6.js"><link rel="prefetch" href="/assets/js/27.bfb314fc.js"><link rel="prefetch" href="/assets/js/28.eb5bb6dd.js"><link rel="prefetch" href="/assets/js/29.85951d35.js"><link rel="prefetch" href="/assets/js/30.3ab2f015.js"><link rel="prefetch" href="/assets/js/31.19e83386.js"><link rel="prefetch" href="/assets/js/32.9ae544de.js"><link rel="prefetch" href="/assets/js/33.6217dc1d.js"><link rel="prefetch" href="/assets/js/34.536a29fa.js"><link rel="prefetch" href="/assets/js/35.fb6949f5.js"><link rel="prefetch" href="/assets/js/36.a7a52698.js"><link rel="prefetch" href="/assets/js/37.49edc975.js"><link rel="prefetch" href="/assets/js/38.3485957a.js"><link rel="prefetch" href="/assets/js/39.321fc8f7.js"><link rel="prefetch" href="/assets/js/4.e65c40a3.js"><link rel="prefetch" href="/assets/js/40.6a1dac4a.js"><link rel="prefetch" href="/assets/js/41.10b02315.js"><link rel="prefetch" href="/assets/js/42.6a03f9a3.js"><link rel="prefetch" href="/assets/js/43.a29302d4.js"><link rel="prefetch" href="/assets/js/44.4bca9183.js"><link rel="prefetch" href="/assets/js/45.1796ae26.js"><link rel="prefetch" href="/assets/js/46.3e56d943.js"><link rel="prefetch" href="/assets/js/47.668c1b8f.js"><link rel="prefetch" href="/assets/js/48.99c62cc3.js"><link rel="prefetch" href="/assets/js/49.0f267cfa.js"><link rel="prefetch" href="/assets/js/5.362f591e.js"><link rel="prefetch" href="/assets/js/50.b603f385.js"><link rel="prefetch" href="/assets/js/51.b72b1237.js"><link rel="prefetch" href="/assets/js/52.7010afac.js"><link rel="prefetch" href="/assets/js/53.9919196b.js"><link rel="prefetch" href="/assets/js/54.6f4bcf93.js"><link rel="prefetch" href="/assets/js/55.edd5bc67.js"><link rel="prefetch" href="/assets/js/56.59a1740b.js"><link rel="prefetch" href="/assets/js/57.593caf88.js"><link rel="prefetch" href="/assets/js/58.b9f3c9cc.js"><link rel="prefetch" href="/assets/js/6.3861453d.js"><link rel="prefetch" href="/assets/js/60.93668fda.js"><link rel="prefetch" href="/assets/js/61.b8fe8710.js"><link rel="prefetch" href="/assets/js/62.398715fc.js"><link rel="prefetch" href="/assets/js/63.0d2fe76e.js"><link rel="prefetch" href="/assets/js/64.fee70ca3.js"><link rel="prefetch" href="/assets/js/65.c5b67e3a.js"><link rel="prefetch" href="/assets/js/66.ead7455e.js"><link rel="prefetch" href="/assets/js/67.8e77f29e.js"><link rel="prefetch" href="/assets/js/68.3575ff88.js"><link rel="prefetch" href="/assets/js/69.7a8d6c60.js"><link rel="prefetch" href="/assets/js/7.c1fb2506.js"><link rel="prefetch" href="/assets/js/70.caa59252.js"><link rel="prefetch" href="/assets/js/71.c12374b3.js"><link rel="prefetch" href="/assets/js/72.89747a0d.js"><link rel="prefetch" href="/assets/js/73.0ec3ba86.js"><link rel="prefetch" href="/assets/js/74.ac3d6b1f.js"><link rel="prefetch" href="/assets/js/75.58465c97.js"><link rel="prefetch" href="/assets/js/76.8fac6d2a.js"><link rel="prefetch" href="/assets/js/8.706c34bc.js"><link rel="prefetch" href="/assets/js/9.54541cad.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.018708fb.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-1156296a><div data-v-1156296a><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1156296a data-v-1156296a><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-4e82dffc data-v-1156296a data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>Rinneの大図書館</h3> <p class="description" data-v-4e82dffc data-v-4e82dffc>Rinne's Library</p> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><!---->
+            
+          <span data-v-4e82dffc>2017 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-1156296a><header class="navbar" data-v-1156296a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/sysimg/logo.png" alt="Rinneの大図書館" class="logo"> <span class="site-name">Rinneの大図書館</span></a> <div class="links"><!----> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CentOS7/" class="nav-link"><i class="undefined"></i>
+  CentOS7
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Endlessh/" class="nav-link"><i class="undefined"></i>
+  Endlessh
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Docker/" class="nav-link"><i class="undefined"></i>
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/DNS/" class="nav-link"><i class="undefined"></i>
+  DNS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Nginx/" class="nav-link"><i class="undefined"></i>
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/V2ray/" class="nav-link"><i class="undefined"></i>
+  V2ray
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><a href="https://github.com/AKHYui" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1156296a></div> <aside class="sidebar" data-v-1156296a><div class="personal-info-wrapper" data-v-828910c6 data-v-1156296a><img src="/sysimg/kamiyama.png" alt="author-avatar" class="personal-img" data-v-828910c6> <!----> <div class="num" data-v-828910c6><div data-v-828910c6><h3 data-v-828910c6>63</h3> <h6 data-v-828910c6>Articles</h6></div> <div data-v-828910c6><h3 data-v-828910c6>14</h3> <h6 data-v-828910c6>Tags</h6></div></div> <ul class="social-links" data-v-828910c6></ul> <hr data-v-828910c6></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CentOS7/" class="nav-link"><i class="undefined"></i>
+  CentOS7
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Endlessh/" class="nav-link"><i class="undefined"></i>
+  Endlessh
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Docker/" class="nav-link"><i class="undefined"></i>
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/DNS/" class="nav-link"><i class="undefined"></i>
+  DNS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Nginx/" class="nav-link"><i class="undefined"></i>
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/V2ray/" class="nav-link"><i class="undefined"></i>
+  V2ray
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><a href="https://github.com/AKHYui" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-4e82dffc data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>CentOS7 自动化运维基础 符号与正则表达式</h3> <!----> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><!---->
+            
+          <span data-v-4e82dffc>2017 - </span>
+          2021
+        </a></span></div></div> <div data-v-1156296a><main class="page"><section><div class="page-title"><h1 class="title">CentOS7 自动化运维基础 符号与正则表达式</h1> <div data-v-1ff7123e><i class="iconfont reco-account" data-v-1ff7123e><span data-v-1ff7123e>hyui</span></i> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>2/17/2020</span></i> <!----> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>linux</span><span class="tag-item" data-v-1ff7123e>Bash</span></i></div></div> <div class="theme-reco-content content__default"><h1 id="shell引号"><a href="#shell引号" class="header-anchor">#</a> Shell引号</h1> <h2 id="反斜线"><a href="#反斜线" class="header-anchor">#</a> 反斜线</h2> <ul><li>反斜线将将紧跟其后的单个字符设为字面意义上的字符</li> <li>如果在命令末尾使用\回车后，\可以将回车命令提交功能屏蔽，将回车认为是换行继续输入命令，实现命令的多行输入</li></ul> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# echo *  #显示当前目录所有文件
+file1 file2 file3 test.sh
+[root@Hyui-VM ~]# echo \*  #显示字符*
+*
+[root@Hyui-VM ~]# echo \&gt;
+&gt;
+[root@Hyui-VM ~]# find / \  #换行输入多行命令
+&gt; -name &quot;test.sh&quot; \
+&gt; -type f \
+&gt; -size +5M
+</code></pre></div><h2 id="单引号"><a href="#单引号" class="header-anchor">#</a> 单引号</h2> <ul><li>单引号将所有字符还原为字面意义，实现屏蔽Shell元字符的功能</li> <li>单引号必须成对出现</li></ul> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# echo '$HOME'  #单引号屏蔽了$的功能
+$HOME
+[root@Hyui-VM ~]# echo 'test\'  #单引号屏蔽了\功能
+test\
+</code></pre></div><h2 id="双引号"><a href="#双引号" class="header-anchor">#</a> 双引号</h2> <ul><li><strong>双引号不会屏蔽'和\和$这三个Shell元字符的含义</strong></li> <li><strong>如果需要屏蔽这些字符含义，必须前置添加一个\符号</strong></li></ul> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# echo &quot;This's CentOS7&quot;  #双引号中的单引号可以单个出现
+This's CentOS7
+[root@Hyui-VM ~]# echo &quot;$HOME&quot;  #正常输出$HOME路径
+/root
+[root@Hyui-VM ~]# echo &quot;\$HOME&quot;  #$符号被屏蔽
+$HOME
+</code></pre></div><h2 id="反引号"><a href="#反引号" class="header-anchor">#</a> 反引号</h2> <ul><li>Shell中使用反引号进行命令替换，命令替换可以使Shell将命令字符替换为命令执行结果的输出内容，同样功能也可以使用$()来实现</li></ul> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# echo &quot;Today is $(date +%D)&quot;  
+Today is 02/17/20
+</code></pre></div><h1 id="正则表达式"><a href="#正则表达式" class="header-anchor">#</a> 正则表达式</h1> <ul><li>系统常用编辑工具与正则表达式的对应关系</li></ul> <table><thead><tr><th style="text-align:center;">编辑工具</th> <th style="text-align:center;">基本正则表达式</th> <th style="text-align:center;">扩展正则表达式</th></tr></thead> <tbody><tr><td style="text-align:center;">grep</td> <td style="text-align:center;">√</td> <td style="text-align:center;">X</td></tr> <tr><td style="text-align:center;">egrep</td> <td style="text-align:center;">√</td> <td style="text-align:center;">√</td></tr> <tr><td style="text-align:center;">vi</td> <td style="text-align:center;">√</td> <td style="text-align:center;">X</td></tr> <tr><td style="text-align:center;">sed</td> <td style="text-align:center;">√</td> <td style="text-align:center;">X</td></tr> <tr><td style="text-align:center;">awk</td> <td style="text-align:center;">√</td> <td style="text-align:center;">√</td></tr></tbody></table> <h2 id="基本正则表达式"><a href="#基本正则表达式" class="header-anchor">#</a> 基本正则表达式</h2> <h3 id="基本正则表达式含义"><a href="#基本正则表达式含义" class="header-anchor">#</a> 基本正则表达式含义</h3> <table><thead><tr><th style="text-align:left;">符号</th> <th style="text-align:left;">含义</th></tr></thead> <tbody><tr><td style="text-align:left;">c</td> <td style="text-align:left;">匹配字母c</td></tr> <tr><td style="text-align:left;">.</td> <td style="text-align:left;">匹配任意单个字符</td></tr> <tr><td style="text-align:left;">*</td> <td style="text-align:left;">匹配前一个字符出现零次或多次</td></tr> <tr><td style="text-align:left;">.*</td> <td style="text-align:left;">匹配任意多个任意字符</td></tr> <tr><td style="text-align:left;">[]</td> <td style="text-align:left;">匹配集合中的任意单个字符，括号中为一个集合</td></tr> <tr><td style="text-align:left;">[x-y]</td> <td style="text-align:left;">匹配连续的字串范围</td></tr> <tr><td style="text-align:left;">^</td> <td style="text-align:left;">匹配字符串的开头</td></tr> <tr><td style="text-align:left;">$</td> <td style="text-align:left;">匹配字串的结尾</td></tr> <tr><td style="text-align:left;">[^]</td> <td style="text-align:left;">匹配否定，对括号中的集合取反</td></tr> <tr><td style="text-align:left;">|匹配转义后的字串</td> <td style="text-align:left;"></td></tr> <tr><td style="text-align:left;">{n,m}</td> <td style="text-align:left;">匹配前一个字符重复n到m次</td></tr> <tr><td style="text-align:left;">{n,}</td> <td style="text-align:left;">匹配前一个字符重复至少n次</td></tr> <tr><td style="text-align:left;">{n}</td> <td style="text-align:left;">匹配前一个字符n次</td></tr> <tr><td style="text-align:left;">()</td> <td style="text-align:left;">将(与)之间的内容存储在“保留空间”，最大存储9个</td></tr> <tr><td style="text-align:left;">\n</td> <td style="text-align:left;">通过\1至\9调用保留空间中的内容</td></tr></tbody></table> <h3 id="基本正则表达式案例"><a href="#基本正则表达式案例" class="header-anchor">#</a> 基本正则表达式案例</h3> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# cp /etc/passwd ./
+[root@Hyui-VM ~]# grep root ./passwd  #查找passwd文件中包含root的行
+root:x:0:0:root:/root:/bin/bash
+operator:x:11:0:operator:/root:/sbin/nologin
+
+[root@Hyui-VM ~]# grep --color :..0: ./passwd  #查找:与0之间包含任意两个字符的字串，并用颜色加亮显示该行
+root:x:0:0:root:/root:/bin/bash
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+games:x:12:100:games:/usr/games:/sbin/nologin
+
+[root@Hyui-VM ~]# grep --color 00* ./passwd  #查找包含至少一个0的行
+root:x:0:0:root:/root:/bin/bash
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+
+[root@Hyui-VM ~]# grep --color o[os]t ./passwd  #查找包含oot或ost的行
+root:x:0:0:root:/root:/bin/bash
+operator:x:11:0:operator:/root:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+
+[root@Hyui-VM ~]# grep --color [0-9] ./passwd  #查找包含数字0~9的行
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:996::/var/lib/chrony:/sbin/nologin
+ntp:x:38:38::/etc/ntp:/sbin/nologin
+tcpdump:x:72:72::/:/sbin/nologin
+nscd:x:28:28:NSCD Daemon:/:/sbin/nologin
+
+[root@Hyui-VM ~]# grep --color [f-q] ./passwd  #查找包含字母f~q的行
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:996::/var/lib/chrony:/sbin/nologin
+ntp:x:38:38::/etc/ntp:/sbin/nologin
+tcpdump:x:72:72::/:/sbin/nologin
+nscd:x:28:28:NSCD Daemon:/:/sbin/nologin
+
+[root@Hyui-VM ~]# grep --color ^root ./passwd  #查找开头为root的行
+root:x:0:0:root:/root:/bin/bash
+
+[root@Hyui-VM ~]# grep --color bash$ ./passwd  #查找以bash结尾的行
+root:x:0:0:root:/root:/bin/bash
+
+[root@Hyui-VM ~]# grep --color sbin/[^n] ./passwd  #查找sbin/后不跟n的行
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+
+[root@Hyui-VM ~]# grep --color '0\{1,2\}' ./passwd  #查找数字0出现一次两次的行
+root:x:0:0:root:/root:/bin/bash
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+
+[root@Hyui-VM ~]# grep --color &quot;\(root\).*\1&quot; ./passwd  #查找包含两个root的行
+root:x:0:0:root:/root:/bin/bash
+
+[root@Hyui-VM ~]# grep --color &quot;\(root\)\(:\).*\2\1&quot; ./passwd  #查找以root:开头并以:root结尾的字串行
+root:x:0:0:root:/root:/bin/bash
+
+[root@Hyui-VM ~]# grep ^$ ./passwd  #过滤文件的空白行
+[root@Hyui-VM ~]# grep -v ^$ ./passwd  #过滤文件的非空白行
+</code></pre></div><h2 id="扩展正则表达式"><a href="#扩展正则表达式" class="header-anchor">#</a> 扩展正则表达式</h2> <ul><li>扩展正则表达式及含义</li></ul> <table><thead><tr><th style="text-align:left;">字 符</th> <th style="text-align:left;">含 义</th></tr></thead> <tbody><tr><td style="text-align:left;">{n,m}</td> <td style="text-align:left;">等同于基本正则表达式的{n,m}</td></tr> <tr><td style="text-align:left;">+</td> <td style="text-align:left;">匹配前一个字符出现一次或多次</td></tr> <tr><td style="text-align:left;">?</td> <td style="text-align:left;">匹配前一个字符出现一次或零次</td></tr> <tr><td style="text-align:left;">()</td> <td style="text-align:left;">匹配正则集合</td></tr></tbody></table> <ul><li>|是匹配逻辑或，即匹配|前后的字串</li> <li>扩展正则表达式案例</li></ul> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# egrep --color '0{1,2}' ./passwd  #查询数字0出现1次或2次的行
+root:x:0:0:root:/root:/bin/bash
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+
+[root@Hyui-VM ~]# egrep --color '0+' ./passwd  #查找至少出现一个0的行
+root:x:0:0:root:/root:/bin/bash
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+
+[root@Hyui-VM ~]# egrep --color '(root|admin)' ./passwd  #查找包含root或admin的行
+root:x:0:0:root:/root:/bin/bash
+operator:x:11:0:operator:/root:/sbin/nologin
+</code></pre></div><h3 id="posix规范"><a href="#posix规范" class="header-anchor">#</a> POSIX规范</h3> <ul><li>基本正则表达式会有语系问题，需要用POSIX规范正则表达式规则</li></ul> <h4 id="posix规范含义"><a href="#posix规范含义" class="header-anchor">#</a> POSIX规范含义</h4> <table><thead><tr><th style="text-align:left;">字符集</th> <th style="text-align:left;">含 义</th> <th style="text-align:left;">字符集</th> <th style="text-align:left;">含 义</th></tr></thead> <tbody><tr><td style="text-align:left;">[:alpha:]</td> <td style="text-align:left;">字母字符</td> <td style="text-align:left;">[:graph:]</td> <td style="text-align:left;">非空格字符</td></tr> <tr><td style="text-align:left;">[:alnum:]</td> <td style="text-align:left;">字母与数字字符</td> <td style="text-align:left;">[:print:]</td> <td style="text-align:left;">任何可以显示的字符</td></tr> <tr><td style="text-align:left;">[:cntrl:]</td> <td style="text-align:left;">控制字符</td> <td style="text-align:left;">[:space:]</td> <td style="text-align:left;">任何产生空白的字符</td></tr> <tr><td style="text-align:left;">[:digit:]</td> <td style="text-align:left;">数字字符</td> <td style="text-align:left;">[:black:]</td> <td style="text-align:left;">空格与Tab键字符</td></tr> <tr><td style="text-align:left;">[:xdigit:]</td> <td style="text-align:left;">十六进制数字字符</td> <td style="text-align:left;">[:lower:]</td> <td style="text-align:left;">小写字符</td></tr> <tr><td style="text-align:left;">[:punct:]</td> <td style="text-align:left;">标点符号</td> <td style="text-align:left;">[:upper:]</td> <td style="text-align:left;">大写字符</td></tr></tbody></table> <h4 id="posix规范案例"><a href="#posix规范案例" class="header-anchor">#</a> POSIX规范案例</h4> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# grep --color [[:digit:]] ./passwd  
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:996::/var/lib/chrony:/sbin/nologin
+ntp:x:38:38::/etc/ntp:/sbin/nologin
+tcpdump:x:72:72::/:/sbin/nologin
+nscd:x:28:28:NSCD Daemon:/:/sbin/nologin
+
+[root@Hyui-VM ~]# grep --color [[:alpha:]] ./passwd 
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:996::/var/lib/chrony:/sbin/nologin
+ntp:x:38:38::/etc/ntp:/sbin/nologin
+tcpdump:x:72:72::/:/sbin/nologin
+nscd:x:28:28:NSCD Daemon:/:/sbin/nologin
+
+[root@Hyui-VM ~]# grep --color [[:punct:]] ./passwd 
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:996::/var/lib/chrony:/sbin/nologin
+ntp:x:38:38::/etc/ntp:/sbin/nologin
+tcpdump:x:72:72::/:/sbin/nologin
+nscd:x:28:28:NSCD Daemon:/:/sbin/nologin
+
+[root@Hyui-VM ~]# grep [[:space:]] ./passwd 
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+nscd:x:28:28:NSCD Daemon:/:/sbin/nologin
+</code></pre></div><h3 id="gun规范"><a href="#gun规范" class="header-anchor">#</a> GUN规范</h3> <ul><li>Linux中的GUN软件一般还会支持转义元字符，转义元字符包括：\b(边界字符)、\B(与\b为反义词)</li> <li>例如 then, hello the world，字串每一个单词前后都有个\b，用\bthe\b匹配单词，但不会匹配then；\B相反，\Bthe\B不会匹配the，只会匹配the在中加的单词</li></ul> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# grep --color &quot;d\b&quot; ./passwd  #匹配d结尾的单词
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+nscd:x:28:28:NSCD Daemon:/:/sbin/nologin
+
+[root@Hyui-VM ~]# grep --color &quot;\W&quot; ./passwd  #匹配非单词字符
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:996::/var/lib/chrony:/sbin/nologin
+ntp:x:38:38::/etc/ntp:/sbin/nologin
+tcpdump:x:72:72::/:/sbin/nologin
+nscd:x:28:28:NSCD Daemon:/:/sbin/nologin
+</code></pre></div></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-70334359><li class="level-2" data-v-70334359><a href="/views/linux/centos7-3.html#反斜线" class="sidebar-link reco-side-反斜线" data-v-70334359>反斜线</a></li><li class="level-2" data-v-70334359><a href="/views/linux/centos7-3.html#单引号" class="sidebar-link reco-side-单引号" data-v-70334359>单引号</a></li><li class="level-2" data-v-70334359><a href="/views/linux/centos7-3.html#双引号" class="sidebar-link reco-side-双引号" data-v-70334359>双引号</a></li><li class="level-2" data-v-70334359><a href="/views/linux/centos7-3.html#反引号" class="sidebar-link reco-side-反引号" data-v-70334359>反引号</a></li><li class="level-2" data-v-70334359><a href="/views/linux/centos7-3.html#基本正则表达式" class="sidebar-link reco-side-基本正则表达式" data-v-70334359>基本正则表达式</a></li><li class="level-3" data-v-70334359><a href="/views/linux/centos7-3.html#基本正则表达式含义" class="sidebar-link reco-side-基本正则表达式含义" data-v-70334359>基本正则表达式含义</a></li><li class="level-3" data-v-70334359><a href="/views/linux/centos7-3.html#基本正则表达式案例" class="sidebar-link reco-side-基本正则表达式案例" data-v-70334359>基本正则表达式案例</a></li><li class="level-2" data-v-70334359><a href="/views/linux/centos7-3.html#扩展正则表达式" class="sidebar-link reco-side-扩展正则表达式" data-v-70334359>扩展正则表达式</a></li><li class="level-3" data-v-70334359><a href="/views/linux/centos7-3.html#posix规范" class="sidebar-link reco-side-posix规范" data-v-70334359>POSIX规范</a></li><li class="level-3" data-v-70334359><a href="/views/linux/centos7-3.html#gun规范" class="sidebar-link reco-side-gun规范" data-v-70334359>GUN规范</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="reco-bgm-panel" data-v-39f9e6e0><audio id="bgm" src="/music/Iwill.mp3" data-v-39f9e6e0></audio> <div class="reco-float-box" style="bottom:200px;z-index:999999;display:none;" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><img src="/img/1.png" data-v-39f9e6e0></div> <div class="reco-bgm-box" style="left:10px;bottom:10px;z-index:999999;" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><div class="reco-bgm-cover" style="background-image:url(/img/1.png);" data-v-39f9e6e0><div class="mini-operation" style="display:none;" data-v-39f9e6e0><i class="reco-bgm reco-bgm-pause" style="display:none;" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-play" style="display:none;" data-v-39f9e6e0></i></div> <div class="falut-message" style="display:none;" data-v-39f9e6e0>
+          播放失败
+        </div></div> <div class="reco-bgm-info" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><div class="info-box" data-v-39f9e6e0><i class="reco-bgm reco-bgm-music music" data-v-39f9e6e0></i>I will (Piano Ver.)</div> <div class="info-box" data-v-39f9e6e0><i class="reco-bgm reco-bgm-artist" data-v-39f9e6e0></i>solfa</div> <div class="reco-bgm-progress" data-v-39f9e6e0><div class="progress-bar" data-v-39f9e6e0><div class="bar" data-v-39f9e6e0></div></div></div> <div class="reco-bgm-operation" data-v-39f9e6e0><i class="reco-bgm reco-bgm-last last" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-pause pause" style="display:none;" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-play play" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-next next" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-volume1 volume" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-mute mute" style="display:none;" data-v-39f9e6e0></i> <div class="volume-bar" data-v-39f9e6e0><div class="bar" data-v-39f9e6e0></div></div></div></div> <div class="reco-bgm-left-box" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><i class="reco-bgm reco-bgm-left" data-v-39f9e6e0></i></div></div></div><canvas id="vuepress-canvas-cursor"></canvas><div></div></div></div>
+    <script src="/assets/js/app.e77fcc0e.js" defer></script><script src="/assets/js/3.d0fef3ef.js" defer></script><script src="/assets/js/1.1fdf4c94.js" defer></script><script src="/assets/js/59.22946218.js" defer></script>
+  </body>
+</html>

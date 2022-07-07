@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>如何搭建属于自己的DNS | Rinneの大図書館</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/sysimg/logo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+    <script src="/pio/autoload.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/Snowstorm/20131208/snowstorm-min.js"></script>
+    <meta name="description" content="Rinne's Library">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.018708fb.css" as="style"><link rel="preload" href="/assets/js/app.e77fcc0e.js" as="script"><link rel="preload" href="/assets/js/3.d0fef3ef.js" as="script"><link rel="preload" href="/assets/js/1.1fdf4c94.js" as="script"><link rel="preload" href="/assets/js/70.caa59252.js" as="script"><link rel="prefetch" href="/assets/js/10.83624d55.js"><link rel="prefetch" href="/assets/js/11.00a3499d.js"><link rel="prefetch" href="/assets/js/12.4d537ad2.js"><link rel="prefetch" href="/assets/js/13.ab75d70e.js"><link rel="prefetch" href="/assets/js/14.23529ff0.js"><link rel="prefetch" href="/assets/js/15.501afd2b.js"><link rel="prefetch" href="/assets/js/16.5d4f21fe.js"><link rel="prefetch" href="/assets/js/17.dc9dc4f6.js"><link rel="prefetch" href="/assets/js/18.893f5f2f.js"><link rel="prefetch" href="/assets/js/19.bf0daf79.js"><link rel="prefetch" href="/assets/js/20.c1737011.js"><link rel="prefetch" href="/assets/js/21.4688c76e.js"><link rel="prefetch" href="/assets/js/22.e37ab687.js"><link rel="prefetch" href="/assets/js/23.d328f326.js"><link rel="prefetch" href="/assets/js/24.c593da08.js"><link rel="prefetch" href="/assets/js/25.8f0b8e9d.js"><link rel="prefetch" href="/assets/js/26.b9efd2a6.js"><link rel="prefetch" href="/assets/js/27.bfb314fc.js"><link rel="prefetch" href="/assets/js/28.eb5bb6dd.js"><link rel="prefetch" href="/assets/js/29.85951d35.js"><link rel="prefetch" href="/assets/js/30.3ab2f015.js"><link rel="prefetch" href="/assets/js/31.19e83386.js"><link rel="prefetch" href="/assets/js/32.9ae544de.js"><link rel="prefetch" href="/assets/js/33.6217dc1d.js"><link rel="prefetch" href="/assets/js/34.536a29fa.js"><link rel="prefetch" href="/assets/js/35.fb6949f5.js"><link rel="prefetch" href="/assets/js/36.a7a52698.js"><link rel="prefetch" href="/assets/js/37.49edc975.js"><link rel="prefetch" href="/assets/js/38.3485957a.js"><link rel="prefetch" href="/assets/js/39.321fc8f7.js"><link rel="prefetch" href="/assets/js/4.e65c40a3.js"><link rel="prefetch" href="/assets/js/40.6a1dac4a.js"><link rel="prefetch" href="/assets/js/41.10b02315.js"><link rel="prefetch" href="/assets/js/42.6a03f9a3.js"><link rel="prefetch" href="/assets/js/43.a29302d4.js"><link rel="prefetch" href="/assets/js/44.4bca9183.js"><link rel="prefetch" href="/assets/js/45.1796ae26.js"><link rel="prefetch" href="/assets/js/46.3e56d943.js"><link rel="prefetch" href="/assets/js/47.668c1b8f.js"><link rel="prefetch" href="/assets/js/48.99c62cc3.js"><link rel="prefetch" href="/assets/js/49.0f267cfa.js"><link rel="prefetch" href="/assets/js/5.362f591e.js"><link rel="prefetch" href="/assets/js/50.b603f385.js"><link rel="prefetch" href="/assets/js/51.b72b1237.js"><link rel="prefetch" href="/assets/js/52.7010afac.js"><link rel="prefetch" href="/assets/js/53.9919196b.js"><link rel="prefetch" href="/assets/js/54.6f4bcf93.js"><link rel="prefetch" href="/assets/js/55.edd5bc67.js"><link rel="prefetch" href="/assets/js/56.59a1740b.js"><link rel="prefetch" href="/assets/js/57.593caf88.js"><link rel="prefetch" href="/assets/js/58.b9f3c9cc.js"><link rel="prefetch" href="/assets/js/59.22946218.js"><link rel="prefetch" href="/assets/js/6.3861453d.js"><link rel="prefetch" href="/assets/js/60.93668fda.js"><link rel="prefetch" href="/assets/js/61.b8fe8710.js"><link rel="prefetch" href="/assets/js/62.398715fc.js"><link rel="prefetch" href="/assets/js/63.0d2fe76e.js"><link rel="prefetch" href="/assets/js/64.fee70ca3.js"><link rel="prefetch" href="/assets/js/65.c5b67e3a.js"><link rel="prefetch" href="/assets/js/66.ead7455e.js"><link rel="prefetch" href="/assets/js/67.8e77f29e.js"><link rel="prefetch" href="/assets/js/68.3575ff88.js"><link rel="prefetch" href="/assets/js/69.7a8d6c60.js"><link rel="prefetch" href="/assets/js/7.c1fb2506.js"><link rel="prefetch" href="/assets/js/71.c12374b3.js"><link rel="prefetch" href="/assets/js/72.89747a0d.js"><link rel="prefetch" href="/assets/js/73.0ec3ba86.js"><link rel="prefetch" href="/assets/js/74.ac3d6b1f.js"><link rel="prefetch" href="/assets/js/75.58465c97.js"><link rel="prefetch" href="/assets/js/76.8fac6d2a.js"><link rel="prefetch" href="/assets/js/8.706c34bc.js"><link rel="prefetch" href="/assets/js/9.54541cad.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.018708fb.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-1156296a><div data-v-1156296a><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1156296a data-v-1156296a><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-4e82dffc data-v-1156296a data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>Rinneの大図書館</h3> <p class="description" data-v-4e82dffc data-v-4e82dffc>Rinne's Library</p> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><!---->
+            
+          <span data-v-4e82dffc>2017 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-1156296a><header class="navbar" data-v-1156296a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/sysimg/logo.png" alt="Rinneの大図書館" class="logo"> <span class="site-name">Rinneの大図書館</span></a> <div class="links"><!----> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CentOS7/" class="nav-link"><i class="undefined"></i>
+  CentOS7
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Endlessh/" class="nav-link"><i class="undefined"></i>
+  Endlessh
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Docker/" class="nav-link"><i class="undefined"></i>
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/DNS/" class="nav-link"><i class="undefined"></i>
+  DNS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Nginx/" class="nav-link"><i class="undefined"></i>
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/V2ray/" class="nav-link"><i class="undefined"></i>
+  V2ray
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><a href="https://github.com/AKHYui" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1156296a></div> <aside class="sidebar" data-v-1156296a><div class="personal-info-wrapper" data-v-828910c6 data-v-1156296a><img src="/sysimg/kamiyama.png" alt="author-avatar" class="personal-img" data-v-828910c6> <!----> <div class="num" data-v-828910c6><div data-v-828910c6><h3 data-v-828910c6>63</h3> <h6 data-v-828910c6>Articles</h6></div> <div data-v-828910c6><h3 data-v-828910c6>14</h3> <h6 data-v-828910c6>Tags</h6></div></div> <ul class="social-links" data-v-828910c6></ul> <hr data-v-828910c6></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CentOS7/" class="nav-link"><i class="undefined"></i>
+  CentOS7
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Endlessh/" class="nav-link"><i class="undefined"></i>
+  Endlessh
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Docker/" class="nav-link"><i class="undefined"></i>
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/DNS/" class="nav-link"><i class="undefined"></i>
+  DNS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Nginx/" class="nav-link"><i class="undefined"></i>
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/V2ray/" class="nav-link"><i class="undefined"></i>
+  V2ray
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><a href="https://github.com/AKHYui" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-4e82dffc data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>如何搭建属于自己的DNS</h3> <!----> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><!---->
+            
+          <span data-v-4e82dffc>2017 - </span>
+          2021
+        </a></span></div></div> <div data-v-1156296a><main class="page"><section><div class="page-title"><h1 class="title">如何搭建属于自己的DNS</h1> <div data-v-1ff7123e><i class="iconfont reco-account" data-v-1ff7123e><span data-v-1ff7123e>hyui</span></i> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>1/19/2019</span></i> <!----> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>linux</span></i></div></div> <div class="theme-reco-content content__default"><p>前一段时间发现路由器里面可以自定义DNS，就想如果把纯净的DNS放入路由器里会不会直接访问谷歌和pixiv之类的。</p> <hr> <p>教程开始
+我们制作私人DNS有两种方法：</p> <ol><li>dnsmasq</li> <li>overture</li></ol> <p>制作环境使用CentOS7</p> <h2 id="dnsmasq"><a href="#dnsmasq" class="header-anchor">#</a> dnsmasq</h2> <h3 id="首先我们先更新源"><a href="#首先我们先更新源" class="header-anchor">#</a> 首先我们先更新源</h3> <div class="language-sh extra-class"><pre class="language-sh"><code>    yum -y update
+</code></pre></div><h3 id="然后安装dnsmasq"><a href="#然后安装dnsmasq" class="header-anchor">#</a> 然后安装dnsmasq</h3> <div class="language-sh extra-class"><pre class="language-sh"><code>    yum <span class="token function">install</span> dnsmasq -y
+</code></pre></div><h3 id="编辑配置文件"><a href="#编辑配置文件" class="header-anchor">#</a> 编辑配置文件</h3> <p>dnsmasq的配置文件在/etc/dnsmasq.conf中，编辑这个文件</p> <div class="language-sh extra-class"><pre class="language-sh"><code>    <span class="token function">vim</span> /etc/dnsmasq.conf
+</code></pre></div><p>里面的东西很多，需要添加的就以下几种</p> <div class="language- extra-class"><pre class="language-text"><code>    #这个是你指定的hosts文件，dnsmasq会使用你指定的hosts(有的时候hosts比较好的可以直接连YouTube)
+    addn-hosts=/etc/hosts
+    #这个是你自定义的上游DNS(第一个是阿里云的DNS，第二个是教育网的DNS)
+    server=223.5.5.5
+    server=202.38.93.153
+    #listen-address这个配置不可以有，一定要删掉
+    #如果看到listen-address=127.0.0.1这个可以注释掉或者删掉
+</code></pre></div><h3 id="基本指令"><a href="#基本指令" class="header-anchor">#</a> 基本指令</h3> <p>dnsmasq的基本指令</p> <div class="language-sh extra-class"><pre class="language-sh"><code>    <span class="token comment">#开启</span>
+    <span class="token function">sudo</span> <span class="token function">service</span> dnsmasq start
+    <span class="token comment">#关闭</span>
+    <span class="token function">sudo</span> <span class="token function">service</span> dnsmasq stop
+    <span class="token comment">#重启</span>
+    <span class="token function">sudo</span> <span class="token function">service</span> dnsmasq restart
+</code></pre></div><p>开启以后查看53端口</p> <div class="language-sh extra-class"><pre class="language-sh"><code>    <span class="token function">netstat</span> -tunlp <span class="token operator">|</span> <span class="token function">grep</span> <span class="token number">53</span>
+</code></pre></div><p>如果显示结果为</p> <div class="language- extra-class"><pre class="language-text"><code>
+    tcp        0      0 0.0.0.0:53                  0.0.0.0:*                   LIST                    EN      2346/dnsmasq
+    udp        0      0 0.0.0.0:53                  0.0.0.0:*                                                   2346/dnsmasq
+</code></pre></div><p>dnsmasq正在运行了
+dnsmasq有个很大的缺点，虽然操作比较简单，但是dnsmasq是从上游DNS的53端口获取流量，而无法确定上游DNS的53端口的流量是否已经遭到了污染，如果你一套稳定而且很棒的hosts可以用dnsmasq。</p> <hr> <h2 id="overture"><a href="#overture" class="header-anchor">#</a> overture</h2> <p>和dnsmasq不同的是，overture可以从上游DNS的非标准端口(非53端口)接收流量，不过需要上游DNS的支持。</p> <p>overture不仅可以用在VPS中，也可以用在树莓派甚至Android</p> <p>overture可以在GITHUB上找到<a href="https://github.com/shawn1m/overture">点此进入</a></p> <h3 id="下载程序"><a href="#下载程序" class="header-anchor">#</a> 下载程序</h3> <p>根据你的架构下载对应的版本</p> <div class="language-sh extra-class"><pre class="language-sh"><code>    <span class="token builtin class-name">cd</span> ~
+    <span class="token function">wget</span> <span class="token punctuation">[</span>要下载文件的网址<span class="token punctuation">]</span>
+</code></pre></div><p>我下载的是overture-linux-amd64.zip</p> <div class="language-sh extra-class"><pre class="language-sh"><code>    <span class="token function">mkdir</span> overture <span class="token operator">&amp;&amp;</span> <span class="token function">mv</span> overture-linux-amd64.zip overture
+    <span class="token function">chmod</span> <span class="token number">774</span> overture
+</code></pre></div><p>解压zip文件</p> <div class="language-sh extra-class"><pre class="language-sh"><code>    <span class="token builtin class-name">cd</span> overture
+    <span class="token function">unzip</span> overture-linux-amd64.zip
+    <span class="token function">chmod</span> <span class="token number">774</span> ./*
+</code></pre></div><p>会有这些文件</p> <div class="language- extra-class"><pre class="language-text"><code>    [root@hyui overture]# ls
+    config.json                domain_primary_sample  hosts_sample                   ip_network_primary_sample  overture-linux-amd64.zip
+    domain_alternative_sample             ip_network_alternative_sample  overture-linux-amd64
+</code></pre></div><h3 id="修改配置文件"><a href="#修改配置文件" class="header-anchor">#</a> 修改配置文件</h3> <p>修改config.json</p> <div class="language-sh extra-class"><pre class="language-sh"><code>    <span class="token function">vim</span> config.json
+</code></pre></div><p>其中需要修改一些地方</p> <div class="language-json extra-class"><pre class="language-json"><code>    <span class="token property">&quot;PrimaryDNS&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>  <span class="token comment">//你的主DNS信息，使用了DNSPOD</span>
+        <span class="token punctuation">{</span>
+          <span class="token property">&quot;Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;DNSPod&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;Address&quot;</span><span class="token operator">:</span> <span class="token string">&quot;119.29.29.29:53&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;Protocol&quot;</span><span class="token operator">:</span> <span class="token string">&quot;udp&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;SOCKS5Address&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;Timeout&quot;</span><span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;EDNSClientSubnet&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;Policy&quot;</span><span class="token operator">:</span> <span class="token string">&quot;auto&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;ExternalIP&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;NoCookie&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;AlternativeDNS&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>   <span class="token comment">//你的备用DNS信息，这个是外国DNS，为了防止对53端口的投毒，可以使用443端口(前提是他们支持443或其他端口)</span>
+        <span class="token punctuation">{</span>
+          <span class="token property">&quot;Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Opendns&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;Address&quot;</span><span class="token operator">:</span> <span class="token string">&quot;208.67.220.220:443&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;Protocol&quot;</span><span class="token operator">:</span> <span class="token string">&quot;tcp&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;SOCKS5Address&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;Timeout&quot;</span><span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;EDNSClientSubnet&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;Policy&quot;</span><span class="token operator">:</span> <span class="token string">&quot;disable&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;ExternalIP&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;NoCookie&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+</code></pre></div><p>关于EDNSClientSubnet的说明，作者给出的是</p> <div class="language- extra-class"><pre class="language-text"><code>EDNSClientSubnet: Used to improve DNS accuracy. Please check RFC7871 for details.
+Policy
+auto: If client IP is not in the reserved IP network, use client IP. Otherwise, use external IP.
+manual: Use external IP if this field is not empty, otherwise use client IP if it is not reserved IP.
+disable: Disable this feature.
+ExternalIP: If this field is empty, ECS will be disabled when the inbound IP is not an external IP.
+NoCookie: Disable cookie.
+</code></pre></div><p>EDNSClientSubnet：用于提高DNS准确性。</p> <p>auto：如果客户端IP不在保留的IP网络中，请使用客户端IP。否则，请使用外部IP。</p> <p>manual：如果此字段不为空，则使用外部IP，否则使用客户端IP（如果不是保留IP）。</p> <p>disable：禁用此功能。</p> <p>ExternalIP：如果此字段为空，则当入站IP不是外部IP时，将禁用ECS。</p> <p>NoCookie：禁用cookie。</p> <p>overture同样可以自定义hosts</p> <div class="language- extra-class"><pre class="language-text"><code>    &quot;HostsFile&quot;: &quot;/root/overture/hosts&quot;   //这一行中的hosts即为自定义的hosts需要自己添加
+</code></pre></div><h3 id="运行"><a href="#运行" class="header-anchor">#</a> 运行</h3> <p>设置完成后就可以运行了</p> <div class="language- extra-class"><pre class="language-text"><code>    ./overture-linux-amd64
+</code></pre></div><p>会显示</p> <div class="language- extra-class"><pre class="language-text"><code>    INFO[0000] Overture v1.5-rc3                            
+    INFO[0000] If you need any help, please visit the project repository: https://github.com/shawn1m/overture 
+    INFO[0000] Load domain ./domain_primary_sample successful with 1 records  
+    INFO[0000] Load domain ./domain_alternative_sample successful with 1 records  
+    INFO[0000] Load ./ip_network_primary_sample successful  
+    INFO[0000] Load ./ip_network_alternative_sample successful 
+    INFO[0000] Minimum TTL is disabled                      
+    INFO[0000] Cache is disabled                            
+    INFO[0000] Load hosts file successful                   
+    INFO[0000] Start overture on :53 
+</code></pre></div><p>说明正在运行了
+保持overture在后台运行可以用</p> <div class="language-sh extra-class"><pre class="language-sh"><code>    setsid ./overture-linux-amd64
+</code></pre></div><h3 id="开机启动"><a href="#开机启动" class="header-anchor">#</a> 开机启动</h3> <p>当然我们也可以写一个脚本让它开机自启动</p> <div class="language-sh extra-class"><pre class="language-sh"><code>    <span class="token function">mkdir</span> /etc/overture
+    <span class="token function">vim</span> /etc/overture/overture.sh
+    
+    <span class="token comment">#!/bin/bash</span>
+    <span class="token builtin class-name">cd</span> /root/overture/
+    setsid ./overture-linux-amd64
+</code></pre></div><p>创建好以后标记为可执行文件</p> <div class="language- extra-class"><pre class="language-text"><code>    chmod +x /etc/overture/overture.sh
+</code></pre></div><p>将rc.local也标记为可执行文件</p> <div class="language- extra-class"><pre class="language-text"><code>    chmod +x /etc/rc.d/rc.local
+</code></pre></div><p>打开rc.local</p> <div class="language- extra-class"><pre class="language-text"><code>    vim /etc/rc.d/rc.local
+</code></pre></div><p>添加脚本进去</p> <div class="language- extra-class"><pre class="language-text"><code>    /etc/overture/overture.sh
+</code></pre></div><p>就可以开机被执行了。</p> <hr> <h2 id="补充"><a href="#补充" class="header-anchor">#</a> 补充</h2> <p>后记:后来一直都觉得哪里不太好，觉得是不是哪里可以改进之类的，于是有了这个补充。
+/root/overture这个目录我们完全可以放在/usr/local/目录中
+然后进入/usr/local/overture将overture-linux-amd64软链接到/usr/bin
+这样就可以不用在cd进overture的目录了</p> <div class="language-sh extra-class"><pre class="language-sh"><code>    <span class="token comment"># 代码实现</span>
+    <span class="token comment">## 移动前可以先停止overture的运行</span>
+    <span class="token function">mv</span> /root/overture /usr/local/
+    <span class="token builtin class-name">cd</span> /usr/local/overture
+    <span class="token comment">## 软链接的实现 </span>
+    <span class="token function">ln</span> -s /usr/local/overture/overture-linux-amd64 /usr/bin/overture
+    <span class="token comment">## 运行</span>
+    setsid overture -c /usr/local/overture/config.json
+</code></pre></div><p>这个时候就不需要那个开机脚本了 直接把运行命令添加到/etc/rc.d/rc.local就够了</p></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-70334359><li class="level-2" data-v-70334359><a href="/views/linux/overture.html#dnsmasq" class="sidebar-link reco-side-dnsmasq" data-v-70334359>dnsmasq</a></li><li class="level-3" data-v-70334359><a href="/views/linux/overture.html#首先我们先更新源" class="sidebar-link reco-side-首先我们先更新源" data-v-70334359>首先我们先更新源</a></li><li class="level-3" data-v-70334359><a href="/views/linux/overture.html#然后安装dnsmasq" class="sidebar-link reco-side-然后安装dnsmasq" data-v-70334359>然后安装dnsmasq</a></li><li class="level-3" data-v-70334359><a href="/views/linux/overture.html#编辑配置文件" class="sidebar-link reco-side-编辑配置文件" data-v-70334359>编辑配置文件</a></li><li class="level-3" data-v-70334359><a href="/views/linux/overture.html#基本指令" class="sidebar-link reco-side-基本指令" data-v-70334359>基本指令</a></li><li class="level-2" data-v-70334359><a href="/views/linux/overture.html#overture" class="sidebar-link reco-side-overture" data-v-70334359>overture</a></li><li class="level-3" data-v-70334359><a href="/views/linux/overture.html#下载程序" class="sidebar-link reco-side-下载程序" data-v-70334359>下载程序</a></li><li class="level-3" data-v-70334359><a href="/views/linux/overture.html#修改配置文件" class="sidebar-link reco-side-修改配置文件" data-v-70334359>修改配置文件</a></li><li class="level-3" data-v-70334359><a href="/views/linux/overture.html#运行" class="sidebar-link reco-side-运行" data-v-70334359>运行</a></li><li class="level-3" data-v-70334359><a href="/views/linux/overture.html#开机启动" class="sidebar-link reco-side-开机启动" data-v-70334359>开机启动</a></li><li class="level-2" data-v-70334359><a href="/views/linux/overture.html#补充" class="sidebar-link reco-side-补充" data-v-70334359>补充</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="reco-bgm-panel" data-v-39f9e6e0><audio id="bgm" src="/music/Iwill.mp3" data-v-39f9e6e0></audio> <div class="reco-float-box" style="bottom:200px;z-index:999999;display:none;" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><img src="/img/1.png" data-v-39f9e6e0></div> <div class="reco-bgm-box" style="left:10px;bottom:10px;z-index:999999;" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><div class="reco-bgm-cover" style="background-image:url(/img/1.png);" data-v-39f9e6e0><div class="mini-operation" style="display:none;" data-v-39f9e6e0><i class="reco-bgm reco-bgm-pause" style="display:none;" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-play" style="display:none;" data-v-39f9e6e0></i></div> <div class="falut-message" style="display:none;" data-v-39f9e6e0>
+          播放失败
+        </div></div> <div class="reco-bgm-info" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><div class="info-box" data-v-39f9e6e0><i class="reco-bgm reco-bgm-music music" data-v-39f9e6e0></i>I will (Piano Ver.)</div> <div class="info-box" data-v-39f9e6e0><i class="reco-bgm reco-bgm-artist" data-v-39f9e6e0></i>solfa</div> <div class="reco-bgm-progress" data-v-39f9e6e0><div class="progress-bar" data-v-39f9e6e0><div class="bar" data-v-39f9e6e0></div></div></div> <div class="reco-bgm-operation" data-v-39f9e6e0><i class="reco-bgm reco-bgm-last last" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-pause pause" style="display:none;" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-play play" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-next next" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-volume1 volume" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-mute mute" style="display:none;" data-v-39f9e6e0></i> <div class="volume-bar" data-v-39f9e6e0><div class="bar" data-v-39f9e6e0></div></div></div></div> <div class="reco-bgm-left-box" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><i class="reco-bgm reco-bgm-left" data-v-39f9e6e0></i></div></div></div><canvas id="vuepress-canvas-cursor"></canvas><div></div></div></div>
+    <script src="/assets/js/app.e77fcc0e.js" defer></script><script src="/assets/js/3.d0fef3ef.js" defer></script><script src="/assets/js/1.1fdf4c94.js" defer></script><script src="/assets/js/70.caa59252.js" defer></script>
+  </body>
+</html>

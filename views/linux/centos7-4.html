@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CentOS7 自动化运维基础 Sed编辑 | Rinneの大図書館</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/sysimg/logo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+    <script src="/pio/autoload.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/Snowstorm/20131208/snowstorm-min.js"></script>
+    <meta name="description" content="Rinne's Library">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.018708fb.css" as="style"><link rel="preload" href="/assets/js/app.e77fcc0e.js" as="script"><link rel="preload" href="/assets/js/3.d0fef3ef.js" as="script"><link rel="preload" href="/assets/js/1.1fdf4c94.js" as="script"><link rel="preload" href="/assets/js/60.93668fda.js" as="script"><link rel="prefetch" href="/assets/js/10.83624d55.js"><link rel="prefetch" href="/assets/js/11.00a3499d.js"><link rel="prefetch" href="/assets/js/12.4d537ad2.js"><link rel="prefetch" href="/assets/js/13.ab75d70e.js"><link rel="prefetch" href="/assets/js/14.23529ff0.js"><link rel="prefetch" href="/assets/js/15.501afd2b.js"><link rel="prefetch" href="/assets/js/16.5d4f21fe.js"><link rel="prefetch" href="/assets/js/17.dc9dc4f6.js"><link rel="prefetch" href="/assets/js/18.893f5f2f.js"><link rel="prefetch" href="/assets/js/19.bf0daf79.js"><link rel="prefetch" href="/assets/js/20.c1737011.js"><link rel="prefetch" href="/assets/js/21.4688c76e.js"><link rel="prefetch" href="/assets/js/22.e37ab687.js"><link rel="prefetch" href="/assets/js/23.d328f326.js"><link rel="prefetch" href="/assets/js/24.c593da08.js"><link rel="prefetch" href="/assets/js/25.8f0b8e9d.js"><link rel="prefetch" href="/assets/js/26.b9efd2a6.js"><link rel="prefetch" href="/assets/js/27.bfb314fc.js"><link rel="prefetch" href="/assets/js/28.eb5bb6dd.js"><link rel="prefetch" href="/assets/js/29.85951d35.js"><link rel="prefetch" href="/assets/js/30.3ab2f015.js"><link rel="prefetch" href="/assets/js/31.19e83386.js"><link rel="prefetch" href="/assets/js/32.9ae544de.js"><link rel="prefetch" href="/assets/js/33.6217dc1d.js"><link rel="prefetch" href="/assets/js/34.536a29fa.js"><link rel="prefetch" href="/assets/js/35.fb6949f5.js"><link rel="prefetch" href="/assets/js/36.a7a52698.js"><link rel="prefetch" href="/assets/js/37.49edc975.js"><link rel="prefetch" href="/assets/js/38.3485957a.js"><link rel="prefetch" href="/assets/js/39.321fc8f7.js"><link rel="prefetch" href="/assets/js/4.e65c40a3.js"><link rel="prefetch" href="/assets/js/40.6a1dac4a.js"><link rel="prefetch" href="/assets/js/41.10b02315.js"><link rel="prefetch" href="/assets/js/42.6a03f9a3.js"><link rel="prefetch" href="/assets/js/43.a29302d4.js"><link rel="prefetch" href="/assets/js/44.4bca9183.js"><link rel="prefetch" href="/assets/js/45.1796ae26.js"><link rel="prefetch" href="/assets/js/46.3e56d943.js"><link rel="prefetch" href="/assets/js/47.668c1b8f.js"><link rel="prefetch" href="/assets/js/48.99c62cc3.js"><link rel="prefetch" href="/assets/js/49.0f267cfa.js"><link rel="prefetch" href="/assets/js/5.362f591e.js"><link rel="prefetch" href="/assets/js/50.b603f385.js"><link rel="prefetch" href="/assets/js/51.b72b1237.js"><link rel="prefetch" href="/assets/js/52.7010afac.js"><link rel="prefetch" href="/assets/js/53.9919196b.js"><link rel="prefetch" href="/assets/js/54.6f4bcf93.js"><link rel="prefetch" href="/assets/js/55.edd5bc67.js"><link rel="prefetch" href="/assets/js/56.59a1740b.js"><link rel="prefetch" href="/assets/js/57.593caf88.js"><link rel="prefetch" href="/assets/js/58.b9f3c9cc.js"><link rel="prefetch" href="/assets/js/59.22946218.js"><link rel="prefetch" href="/assets/js/6.3861453d.js"><link rel="prefetch" href="/assets/js/61.b8fe8710.js"><link rel="prefetch" href="/assets/js/62.398715fc.js"><link rel="prefetch" href="/assets/js/63.0d2fe76e.js"><link rel="prefetch" href="/assets/js/64.fee70ca3.js"><link rel="prefetch" href="/assets/js/65.c5b67e3a.js"><link rel="prefetch" href="/assets/js/66.ead7455e.js"><link rel="prefetch" href="/assets/js/67.8e77f29e.js"><link rel="prefetch" href="/assets/js/68.3575ff88.js"><link rel="prefetch" href="/assets/js/69.7a8d6c60.js"><link rel="prefetch" href="/assets/js/7.c1fb2506.js"><link rel="prefetch" href="/assets/js/70.caa59252.js"><link rel="prefetch" href="/assets/js/71.c12374b3.js"><link rel="prefetch" href="/assets/js/72.89747a0d.js"><link rel="prefetch" href="/assets/js/73.0ec3ba86.js"><link rel="prefetch" href="/assets/js/74.ac3d6b1f.js"><link rel="prefetch" href="/assets/js/75.58465c97.js"><link rel="prefetch" href="/assets/js/76.8fac6d2a.js"><link rel="prefetch" href="/assets/js/8.706c34bc.js"><link rel="prefetch" href="/assets/js/9.54541cad.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.018708fb.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-1156296a><div data-v-1156296a><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1156296a data-v-1156296a><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-4e82dffc data-v-1156296a data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>Rinneの大図書館</h3> <p class="description" data-v-4e82dffc data-v-4e82dffc>Rinne's Library</p> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><!---->
+            
+          <span data-v-4e82dffc>2017 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-1156296a><header class="navbar" data-v-1156296a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/sysimg/logo.png" alt="Rinneの大図書館" class="logo"> <span class="site-name">Rinneの大図書館</span></a> <div class="links"><!----> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CentOS7/" class="nav-link"><i class="undefined"></i>
+  CentOS7
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Endlessh/" class="nav-link"><i class="undefined"></i>
+  Endlessh
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Docker/" class="nav-link"><i class="undefined"></i>
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/DNS/" class="nav-link"><i class="undefined"></i>
+  DNS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Nginx/" class="nav-link"><i class="undefined"></i>
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/V2ray/" class="nav-link"><i class="undefined"></i>
+  V2ray
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><a href="https://github.com/AKHYui" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1156296a></div> <aside class="sidebar" data-v-1156296a><div class="personal-info-wrapper" data-v-828910c6 data-v-1156296a><img src="/sysimg/kamiyama.png" alt="author-avatar" class="personal-img" data-v-828910c6> <!----> <div class="num" data-v-828910c6><div data-v-828910c6><h3 data-v-828910c6>63</h3> <h6 data-v-828910c6>Articles</h6></div> <div data-v-828910c6><h3 data-v-828910c6>14</h3> <h6 data-v-828910c6>Tags</h6></div></div> <ul class="social-links" data-v-828910c6></ul> <hr data-v-828910c6></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CentOS7/" class="nav-link"><i class="undefined"></i>
+  CentOS7
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Endlessh/" class="nav-link"><i class="undefined"></i>
+  Endlessh
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Docker/" class="nav-link"><i class="undefined"></i>
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/DNS/" class="nav-link"><i class="undefined"></i>
+  DNS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Nginx/" class="nav-link"><i class="undefined"></i>
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/V2ray/" class="nav-link"><i class="undefined"></i>
+  V2ray
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><a href="https://github.com/AKHYui" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-4e82dffc data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>CentOS7 自动化运维基础 Sed编辑</h3> <!----> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><!---->
+            
+          <span data-v-4e82dffc>2017 - </span>
+          2021
+        </a></span></div></div> <div data-v-1156296a><main class="page"><section><div class="page-title"><h1 class="title">CentOS7 自动化运维基础 Sed编辑</h1> <div data-v-1ff7123e><i class="iconfont reco-account" data-v-1ff7123e><span data-v-1ff7123e>hyui</span></i> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>2/19/2020</span></i> <!----> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>linux</span><span class="tag-item" data-v-1ff7123e>Bash</span></i></div></div> <div class="theme-reco-content content__default"><h1 id="sed"><a href="#sed" class="header-anchor">#</a> Sed</h1> <h2 id="sed简介"><a href="#sed简介" class="header-anchor">#</a> sed简介</h2> <ul><li>sed是一款流编辑工具，用来对文本进行过滤和替换操作，可以对几十个文件进行统一修改</li> <li>原理：通过文件管道读取文件内容，默认不会修改源文件，而是将读入的内容复制到缓冲区中，成为模式空间，所有指令操作都在模式空间中进行，然后sed根据相应指令对模式空间中的内容进行处理并输出结果，默认输出至屏幕上</li></ul> <h2 id="sed基本语法格式"><a href="#sed基本语法格式" class="header-anchor">#</a> Sed基本语法格式</h2> <table><thead><tr><th style="text-align:left;">选 项</th> <th style="text-align:left;">含 义</th></tr></thead> <tbody><tr><td style="text-align:left;">--version</td> <td style="text-align:left;">显示sed版本</td></tr> <tr><td style="text-align:left;">--help</td> <td style="text-align:left;">显示帮助文档</td></tr> <tr><td style="text-align:left;">-n,--quiet,--silent</td> <td style="text-align:left;">静默输出</td></tr> <tr><td style="text-align:left;">-e script</td> <td style="text-align:left;">允许多个指令脚本被执行</td></tr> <tr><td style="text-align:left;">-f script-file</td> <td style="text-align:left;">从文件中读取脚本指令</td></tr> <tr><td style="text-align:left;">-i,--in-place</td> <td style="text-align:left;">改选项将直接修改源文件(慎用)</td></tr> <tr><td style="text-align:left;">-l N</td> <td style="text-align:left;">制定l指令可以输出行的长度</td></tr> <tr><td style="text-align:left;">--posix</td> <td style="text-align:left;">禁用GUN sed扩展功能</td></tr> <tr><td style="text-align:left;">-r</td> <td style="text-align:left;">在脚本指令中使用扩展正则表达式</td></tr> <tr><td style="text-align:left;">-s,--separate</td> <td style="text-align:left;">默认情况下，sed把输入的多个文件名作为一个长的连续的输入流。而GUN sed则允许把它们当作单独的文件</td></tr> <tr><td style="text-align:left;">-u,--unbuffered</td> <td style="text-align:left;">最低限度的缓存输入与输出</td></tr></tbody></table> <h2 id="sed入门范例"><a href="#sed入门范例" class="header-anchor">#</a> Sed入门范例</h2> <h3 id="基本格式范例"><a href="#基本格式范例" class="header-anchor">#</a> 基本格式范例</h3> <ul><li>a,append表示指令追加</li> <li>i,insert表示插入指令</li> <li>d,delete表示删除指令</li> <li>s,substitution表示替换指令</li></ul> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# cat test
+DEVICE=eno16777736 
+BOOTPROTO=static 
+IPADDR=192.168.0.1 
+NETMASK=25.255.255.0 
+ 
+GATEWAY=192.168.0.254 
+ 
+ONBOOT=yes 
+[root@Hyui-VM ~]# sed '2a TYPE=Ethernet' test  #在第二行之后追加TYPE=Ethernet
+DEVICE=eno16777736 
+BOOTPROTO=static 
+TYPE=Ethernet
+IPADDR=192.168.0.1 
+NETMASK=25.255.255.0 
+ 
+GATEWAY=192.168.0.254 
+ 
+ONBOOT=yes
+[root@Hyui-VM ~]# sed '2i TYPE=Ethernet' test  #在第三行之前追加TYPE=Ethernet
+DEVICE=eno16777736 
+TYPE=Ethernet
+BOOTPROTO=static 
+IPADDR=192.168.0.1 
+NETMASK=25.255.255.0 
+ 
+GATEWAY=192.168.0.254 
+ 
+ONBOOT=yes
+[root@Hyui-VM ~]# sed 's/yes/no/g' test  #把文本中所有的yes替换成no
+DEVICE=eno16777736 
+BOOTPROTO=static 
+IPADDR=192.168.0.1 
+NETMASK=25.255.255.0 
+ 
+GATEWAY=192.168.0.254 
+ 
+ONBOOT=no
+[root@Hyui-VM ~]# sed '3,4d' test  #删除三四行的内容
+DEVICE=eno16777736 
+BOOTPROTO=static 
+ 
+GATEWAY=192.168.0.254 
+ 
+ONBOOT=yes
+</code></pre></div><ul><li>如果出现不确定的行号，更多可以使用正则表达式确定操作对象</li></ul> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# sed '/ONBOOT/a TYPE=Ethernet' test  #匹配包含ONBOOT的行，之后添加TYPE=Ethernet
+DEVICE=eno16777736 
+BOOTPROTO=static 
+IPADDR=192.168.0.1 
+NETMASK=25.255.255.0 
+ 
+GATEWAY=192.168.0.254 
+ 
+ONBOOT=yes 
+TYPE=Ethernet
+[root@Hyui-VM ~]# sed '/^GATEWAY/d' test  #删除以GATEWAY开头的行
+DEVICE=eno16777736 
+BOOTPROTO=static 
+IPADDR=192.168.0.1 
+NETMASK=25.255.255.0 
+ 
+ 
+ONBOOT=yes
+</code></pre></div><ul><li>可以将sed指令写入脚本文件中，通过sed -f来选取</li></ul> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# cat sed.sh 
+#This is sed.sh
+/^$/d
+[root@Hyui-VM ~]# sed -f sed.sh test  #对test文件执行sed.sh指令
+DEVICE=eno16777736 
+BOOTPROTO=static 
+IPADDR=192.168.0.1 
+NETMASK=25.255.255.0 
+GATEWAY=192.168.0.254 
+ONBOOT=yes
+</code></pre></div><ul><li>执行多指令使用的方法</li></ul> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# sed 's/yes/no/;s/static/dhcp/' test  #使用分号隔开
+DEVICE=eno16777736 
+BOOTPROTO=dhcp 
+IPADDR=192.168.0.1 
+NETMASK=25.255.255.0 
+
+GATEWAY=192.168.0.254 
+
+ONBOOT=no
+[root@Hyui-VM ~]# sed -e 's/yes/no/' -e 's/static/dhcp/' test  #用-e选项
+DEVICE=eno16777736 
+BOOTPROTO=dhcp 
+IPADDR=192.168.0.1 
+NETMASK=25.255.255.0 
+
+GATEWAY=192.168.0.254 
+
+ONBOOT=no
+[root@Hyui-VM ~]# sed '  #利用分行
+&gt; s/yes/no/
+&gt; s/static/dhcp/
+&gt; ' test
+DEVICE=eno16777736 
+BOOTPROTO=dhcp 
+IPADDR=192.168.0.1 
+NETMASK=25.255.255.0 
+
+GATEWAY=192.168.0.254 
+
+ONBOOT=no
+</code></pre></div><h3 id="操作地址匹配范例"><a href="#操作地址匹配范例" class="header-anchor">#</a> 操作地址匹配范例</h3> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# sed -n '1~2p' test  #打印文件奇数行
+DEVICE=eno16777736 
+IPADDR=192.168.0.1 
+
+
+[root@Hyui-VM ~]# sed '2,8d' test  #删除2~8行之间所有行
+DEVICE=eno16777736
+</code></pre></div><h2 id="sed常用指令"><a href="#sed常用指令" class="header-anchor">#</a> Sed常用指令</h2> <table><thead><tr><th style="text-align:left;">指 令</th> <th style="text-align:left;">功 能</th></tr></thead> <tbody><tr><td style="text-align:left;">s</td> <td style="text-align:left;">替换</td></tr> <tr><td style="text-align:left;">d</td> <td style="text-align:left;">删除</td></tr> <tr><td style="text-align:left;">a</td> <td style="text-align:left;">追加</td></tr> <tr><td style="text-align:left;">i</td> <td style="text-align:left;">插入</td></tr> <tr><td style="text-align:left;">c</td> <td style="text-align:left;">更改</td></tr> <tr><td style="text-align:left;">l</td> <td style="text-align:left;">打印(显示非打印字符)</td></tr> <tr><td style="text-align:left;">y</td> <td style="text-align:left;">按字符转换</td></tr> <tr><td style="text-align:left;">L</td> <td style="text-align:left;">打印(不显示非打印字符)</td></tr> <tr><td style="text-align:left;">p</td> <td style="text-align:left;">打印</td></tr> <tr><td style="text-align:left;">r</td> <td style="text-align:left;">读入文件内容</td></tr> <tr><td style="text-align:left;">w</td> <td style="text-align:left;">保存至文件</td></tr> <tr><td style="text-align:left;">q</td> <td style="text-align:left;">退出</td></tr></tbody></table> <h3 id="指令范例"><a href="#指令范例" class="header-anchor">#</a> 指令范例</h3> <h4 id="范例1"><a href="#范例1" class="header-anchor">#</a> 范例1</h4> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# cat neko.html 
+&lt;html&gt;
+&lt;title&gt;Neko Site&lt;/title&gt;
+&lt;body&gt;Cute Neko&lt;body&gt;
+&lt;/html&gt;
+</code></pre></div><ul><li>如何将neko.html文件中第二个&quot;body&quot;替换成&quot;/body&quot;呢?</li></ul> <div class="language- extra-class"><pre class="language-text"><code>#编写一个sed.sh脚本：
+[root@Hyui-VM ~]# cat sed.sh 
+/body/{
+s//\/body/2
+}
+</code></pre></div><p>依据上表可得s代表的是替换指令，不需要替换所有body，只需要替换第二个。</p> <p>执行这个脚本：</p> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# sed -f sed.sh neko.html 
+&lt;html&gt;
+&lt;title&gt;Neko Site&lt;/title&gt;
+&lt;body&gt;Cute Neko&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><h4 id="范例2"><a href="#范例2" class="header-anchor">#</a> 范例2</h4> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# cat neko.html 
+&lt;html&gt;
+&lt;title&gt;Neko Site&lt;/title&gt;
+&lt;body&gt;
+h1Cute Nekoh1
+h2Kawaii Nekoh2
+h3Yasashi Nekoh3
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><ul><li>&quot;h1&quot;、&quot;h2&quot;和&quot;h3&quot;分别表示一级标题、二级标题和三级标题，但是文件中缺少&quot;&lt;&gt;&quot;和&quot;&lt;/&gt;&quot;，如何使用Sed对文件进行修改纠正呢？</li></ul> <div class="language- extra-class"><pre class="language-text"><code>#编写一个sed.sh脚本
+[root@Hyui-VM ~]# cat sed.sh 
+/h[0-9]/{
+s//\&lt;&amp;\&gt;/1
+s//\&lt;\/&amp;\&gt;/2
+}
+</code></pre></div><p>在以上sed脚本中，我们要匹配的是h后跟一个数字的行，将h与数字替换成带有&lt;&gt;和&lt;/&gt;的行，也就是将h[0-9]替换为&lt;&amp;&gt;和&lt;/&amp;&gt;，&amp;就是前面要替换的内容；其中第一行指令只替换第一个h1,h2和h3；第二行替换第二个h1,h2和h3。</p> <p>运行脚本：</p> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# sed -f sed.sh neko.html 
+&lt;html&gt;
+&lt;title&gt;Neko Site&lt;/title&gt;
+&lt;body&gt;
+&lt;h1&gt;Cute Neko&lt;/h1&gt;
+&lt;h2&gt;Kawaii Neko&lt;/h2&gt;
+&lt;h3&gt;Yasashi Neko&lt;/h3&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><h4 id="范例3"><a href="#范例3" class="header-anchor">#</a> 范例3</h4> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# cat network 
+DEVICE=eno16777736
+ONBOOT=yes
+BOOTPROTO=static
+
+IPADDR=192.168.0.1
+NETMAST=255.255.255.0
+GATEWAY=192.168.0.254
+</code></pre></div><ul><li>如何删除文件中的空白行？</li></ul> <div class="language- extra-class"><pre class="language-text"><code>#编写一个sed.sh脚本
+[root@Hyui-VM ~]# cat sed.sh 
+/.*/{
+/^$/d
+}
+</code></pre></div><p>匹配任意多个字符，如果匹配不到字串的结尾则为空，需要被删除。</p> <p>运行结果：</p> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# sed -f sed.sh network 
+DEVICE=eno16777736
+ONBOOT=yes
+BOOTPROTO=static
+IPADDR=192.168.0.1
+NETMAST=255.255.255.0
+GATEWAY=192.168.0.254
+</code></pre></div><h4 id="范例4"><a href="#范例4" class="header-anchor">#</a> 范例4</h4> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# cat network 
+DEVICE=eno1245523
+ONBOOT=yes
+BOOTPROTO=static
+NETMAST=255.255.255.0
+GATEWAY=192.168.0.254
+</code></pre></div><ul><li>在BOOTPROTO行下添加一行IPADDR项，内容为192.168.31.125。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# sed '/BOOTPROTO=static/a IPADDR=192.468.31.125' network 
+DEVICE=eno1245523
+ONBOOT=yes
+BOOTPROTO=static
+IPADDR=192.468.31.125
+NETMAST=255.255.255.0
+GATEWAY=192.168.0.254
+</code></pre></div><ul><li>在NETMAST行的前一行添加IPADDR项，内容为192.168.31.125。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# sed '/NETMAST/i IPADDR=192.468.31.125' network 
+DEVICE=eno1245523
+ONBOOT=yes
+BOOTPROTO=static
+IPADDR=192.468.31.125
+NETMAST=255.255.255.0
+GATEWAY=192.168.0.254
+</code></pre></div><ul><li>将ONBOOT的值改为no。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# sed '/ONBOOT/c ONBOOT=no' network 
+DEVICE=eno1245523
+ONBOOT=no
+BOOTPROTO=static
+NETMAST=255.255.255.0
+GATEWAY=192.168.0.254
+</code></pre></div><h4 id="范例5"><a href="#范例5" class="header-anchor">#</a> 范例5</h4> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# cat network 
+DEVICE=eno16777736
+ONBOOT=yes
+BOOTPROTO=static
+IPADDR=192.168.0.1
+NETMAST=255.255.255.0
+GATEWAY=192.168.0.254
+</code></pre></div><ul><li>将前两行显示非打印字符。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# sed -n '1,2l' network 
+DEVICE=eno16777736$
+ONBOOT=yes$
+</code></pre></div><ul><li>显示一二行内容，不显示非显示字符。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# sed -n '1,2p' network 
+DEVICE=eno16777736
+ONBOOT=yes
+</code></pre></div><h4 id="范例6"><a href="#范例6" class="header-anchor">#</a> 范例6</h4> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# cat network 
+DEVICE=eno16777736
+onboot=yes
+BOOTPROTO=static
+ipaddr=192.168.0.1
+nEtMaSt=255.255.255.0
+GaTeWaY=192.168.0.254
+</code></pre></div><ul><li>将文件中所有英文字符转为大写。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>#编写sed脚本
+[root@Hyui-VM ~]# cat sed.sh 
+/.*/{
+/.*/y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/
+}
+</code></pre></div><p>匹配文件中的全部字符，将全部英文字符替换成大写。</p> <p>运行结果：</p> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# sed -f sed.sh network 
+DEVICE=ENO16777736
+ONBOOT=YES
+BOOTPROTO=STATIC
+IPADDR=192.168.0.1
+NETMAST=255.255.255.0
+GATEWAY=192.168.0.254
+</code></pre></div><h4 id="范例7"><a href="#范例7" class="header-anchor">#</a> 范例7</h4> <div class="language- extra-class"><pre class="language-text"><code>#文件1
+[root@Hyui-VM ~]# cat username.txt 
+HoshinoRinne
+HoshinoAoba
+HoshinoHibiki
+#文件2
+[root@Hyui-VM ~]# cat useremail.txt 
+hoshinorinne@hyui.xyz
+hoshinoaoba@hyui.xyz
+hoshinohibiki@hyui.xyz
+</code></pre></div><ul><li>先读取username.txt内容，后读取useremail.txt内容。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# cat sed.sh 
+/.*/{
+$r useremail.txt
+}
+</code></pre></div><p>直接读入useremail.txt文件的内容。</p> <p>运行结果：</p> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# sed -f sed.sh username.txt 
+HoshinoRinne
+HoshinoAoba
+HoshinoHibiki
+hoshinorinne@hyui.xyz
+hoshinoaoba@hyui.xyz
+hoshinohibiki@hyui.xyz
+</code></pre></div><h2 id="sed高级应用"><a href="#sed高级应用" class="header-anchor">#</a> Sed高级应用</h2> <h3 id="多行操作next"><a href="#多行操作next" class="header-anchor">#</a> 多行操作Next</h3> <ul><li>Next指令可以通过读取新的输入行，将它追加至模式空间的现有内容之后，来创建多行模式空间。</li></ul> <h4 id="举例1"><a href="#举例1" class="header-anchor">#</a> 举例1：</h4> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# cat message.txt 
+Name:Alice,
+Mail:Alice@hyui.xyz
+Name:Tim,
+Mail:Tim@hyui.xyz
+</code></pre></div><ul><li>使用Next指令编写sed脚本：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# cat sed.sh 
+#n
+/Name/{
+N
+L
+}
+</code></pre></div><ul><li>其中，&quot;#n&quot;意为屏蔽自动输出，不使用的话会重复显示文件原内容和操作结果。&quot;N&quot;为Next指令。&quot;L&quot;为打印(不显示非打印字符)。</li> <li>运行结果如下：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# sed -f sed.sh message.txt 
+Name:Alice, Mail:Alice@hyui.xyz
+Name:Tim, Mail:Tim@hyui.xyz
+</code></pre></div><h4 id="举例2"><a href="#举例2" class="header-anchor">#</a> 举例2：</h4> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# cat num.txt 
+111
+222
+222
+222
+333
+</code></pre></div><ul><li>使用Next编写sed脚本：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# cat sed.sh 
+#n
+/222/{
+N
+l
+}
+</code></pre></div><ul><li>其中先匹配222内容，匹配到以后立即读取下一行内容，使用&quot;l&quot;会打印非打印字符。</li> <li>运行结果：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# sed -f sed.sh num.txt 
+222\n222$
+222\n333$
+</code></pre></div><ul><li>其中&quot;\n&quot;意为换行符。</li></ul> <h3 id="多行操作print"><a href="#多行操作print" class="header-anchor">#</a> 多行操作Print</h3> <ul><li>多行打印Print指令为&quot;P&quot;，其与小写&quot;p&quot;的区别为：P只输出多行模式空间中的第一部分，直到第一个插入的\n换行符。</li></ul> <h4 id="举例"><a href="#举例" class="header-anchor">#</a> 举例：</h4> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# cat word.txt 
+aaa
+bbb
+ccc
+ddd
+eee
+fff
+</code></pre></div><ul><li>不使用打印</li></ul> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# sed '/.*/N' word.txt 
+aaa
+bbb
+ccc
+ddd
+eee
+fff
+</code></pre></div><ul><li>这个命令只使用了Next指令读取下一行，新旧内容都是直接使用&quot;\n&quot;分隔，读取下一行后没有任何后续指令，所以会输出源文件所有内容。</li> <li>使用L打印：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# sed '/.*/N;L' word.txt 
+aaa bbb
+aaa
+bbb
+ccc ddd
+ccc
+ddd
+eee fff
+eee
+fff
+</code></pre></div><ul><li>L打印表示显示模式空间的内容，而sed输出后会把源文件内容表示出来。</li> <li>使用P打印：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# sed '/.*/N;P' word.txt 
+aaa
+aaa
+bbb
+ccc
+ccc
+ddd
+eee
+eee
+fff
+</code></pre></div><ul><li>P打印为打印模式空间中第一部分内容直到\n结尾，空间模式内容为aaa\nbbb的话就仅打印aaa。</li> <li>使用p打印：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# sed '/.*/N;p' word.txt 
+aaa
+bbb
+aaa
+bbb
+ccc
+ddd
+ccc
+ddd
+eee
+fff
+eee
+fff
+</code></pre></div><ul><li>使用p打印时遇到\n会直接回车换行。</li></ul> <h3 id="多行操作delete"><a href="#多行操作delete" class="header-anchor">#</a> 多行操作Delete</h3> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# cat word.txt 
+aaa
+bbb
+ccc
+ddd
+eee
+fff
+</code></pre></div><ul><li>使用Delete指令：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# sed '/aaa/d' word.txt 
+bbb
+ccc
+ddd
+eee
+fff
+</code></pre></div><h3 id="hold-h-h-get-g-g"><a href="#hold-h-h-get-g-g" class="header-anchor">#</a> Hold(h,H), Get(g,G)</h3> <ul><li>Sed拥有一个hole space(保持空间)的缓冲区，模式空间可以复制内容到保持空间，保持空间内容也可以复制到模式空间。</li> <li>Hold(h|H)    将模式空间内容复制或追加到保持空间</li> <li>Get(g|G)     将保持空间内容复制或追加到模式空间</li> <li>Exchange(x)  交换保持空间与模式空间的内容</li></ul> <h4 id="举例-2"><a href="#举例-2" class="header-anchor">#</a> 举例：</h4> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# cat word.txt 
+aaa
+bbb
+ccc
+ddd
+</code></pre></div><ul><li>编写sed脚本：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# cat sed.sh 
+/aaa/{
+h
+d
+}
+/ccc/{
+G
+}
+</code></pre></div><ul><li>脚本中首先匹配aaa字串，将aaa字串复制到保持空间，然后删除aaa字串；随后匹配ccc字串，将保持空间的内容追加到ccc字串的下一行。</li> <li>运行结果：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>[root@Hyui-VM ~]# sed -f sed.sh word.txt 
+bbb
+ccc
+aaa
+ddd
+</code></pre></div></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-70334359><li class="level-2" data-v-70334359><a href="/views/linux/centos7-4.html#sed简介" class="sidebar-link reco-side-sed简介" data-v-70334359>sed简介</a></li><li class="level-2" data-v-70334359><a href="/views/linux/centos7-4.html#sed基本语法格式" class="sidebar-link reco-side-sed基本语法格式" data-v-70334359>Sed基本语法格式</a></li><li class="level-2" data-v-70334359><a href="/views/linux/centos7-4.html#sed入门范例" class="sidebar-link reco-side-sed入门范例" data-v-70334359>Sed入门范例</a></li><li class="level-3" data-v-70334359><a href="/views/linux/centos7-4.html#基本格式范例" class="sidebar-link reco-side-基本格式范例" data-v-70334359>基本格式范例</a></li><li class="level-3" data-v-70334359><a href="/views/linux/centos7-4.html#操作地址匹配范例" class="sidebar-link reco-side-操作地址匹配范例" data-v-70334359>操作地址匹配范例</a></li><li class="level-2" data-v-70334359><a href="/views/linux/centos7-4.html#sed常用指令" class="sidebar-link reco-side-sed常用指令" data-v-70334359>Sed常用指令</a></li><li class="level-3" data-v-70334359><a href="/views/linux/centos7-4.html#指令范例" class="sidebar-link reco-side-指令范例" data-v-70334359>指令范例</a></li><li class="level-2" data-v-70334359><a href="/views/linux/centos7-4.html#sed高级应用" class="sidebar-link reco-side-sed高级应用" data-v-70334359>Sed高级应用</a></li><li class="level-3" data-v-70334359><a href="/views/linux/centos7-4.html#多行操作next" class="sidebar-link reco-side-多行操作next" data-v-70334359>多行操作Next</a></li><li class="level-3" data-v-70334359><a href="/views/linux/centos7-4.html#多行操作print" class="sidebar-link reco-side-多行操作print" data-v-70334359>多行操作Print</a></li><li class="level-3" data-v-70334359><a href="/views/linux/centos7-4.html#多行操作delete" class="sidebar-link reco-side-多行操作delete" data-v-70334359>多行操作Delete</a></li><li class="level-3" data-v-70334359><a href="/views/linux/centos7-4.html#hold-h-h-get-g-g" class="sidebar-link reco-side-hold-h-h-get-g-g" data-v-70334359>Hold(h,H), Get(g,G)</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="reco-bgm-panel" data-v-39f9e6e0><audio id="bgm" src="/music/Iwill.mp3" data-v-39f9e6e0></audio> <div class="reco-float-box" style="bottom:200px;z-index:999999;display:none;" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><img src="/img/1.png" data-v-39f9e6e0></div> <div class="reco-bgm-box" style="left:10px;bottom:10px;z-index:999999;" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><div class="reco-bgm-cover" style="background-image:url(/img/1.png);" data-v-39f9e6e0><div class="mini-operation" style="display:none;" data-v-39f9e6e0><i class="reco-bgm reco-bgm-pause" style="display:none;" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-play" style="display:none;" data-v-39f9e6e0></i></div> <div class="falut-message" style="display:none;" data-v-39f9e6e0>
+          播放失败
+        </div></div> <div class="reco-bgm-info" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><div class="info-box" data-v-39f9e6e0><i class="reco-bgm reco-bgm-music music" data-v-39f9e6e0></i>I will (Piano Ver.)</div> <div class="info-box" data-v-39f9e6e0><i class="reco-bgm reco-bgm-artist" data-v-39f9e6e0></i>solfa</div> <div class="reco-bgm-progress" data-v-39f9e6e0><div class="progress-bar" data-v-39f9e6e0><div class="bar" data-v-39f9e6e0></div></div></div> <div class="reco-bgm-operation" data-v-39f9e6e0><i class="reco-bgm reco-bgm-last last" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-pause pause" style="display:none;" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-play play" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-next next" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-volume1 volume" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-mute mute" style="display:none;" data-v-39f9e6e0></i> <div class="volume-bar" data-v-39f9e6e0><div class="bar" data-v-39f9e6e0></div></div></div></div> <div class="reco-bgm-left-box" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><i class="reco-bgm reco-bgm-left" data-v-39f9e6e0></i></div></div></div><canvas id="vuepress-canvas-cursor"></canvas><div></div></div></div>
+    <script src="/assets/js/app.e77fcc0e.js" defer></script><script src="/assets/js/3.d0fef3ef.js" defer></script><script src="/assets/js/1.1fdf4c94.js" defer></script><script src="/assets/js/60.93668fda.js" defer></script>
+  </body>
+</html>
